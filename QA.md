@@ -6,7 +6,7 @@ Checked locally on 2026-11-05 / 本地检查日期：2026-11-05。
 - 已逐帧解码全部 12 个 GIF；透明、无限循环、时长一致、无边界裁切。12 张 PNG 均为 384 × 384 透明图。
 - Reviewed the contact sheet and decoded frame strips for all expressions: one shared silhouette, palette and pixel grid. Replaced mismatched particle/steam/tear periods with periodic motion; increased sampling from 16 × 110 ms to 32 × 60 ms. Confetti now stays inside safe canvas bounds. Identical neighboring frames are merged by GIF encoding while retaining their duration.
 - 已审阅全部表情总览和逐帧图：造型、色板和像素网格一致；修正粒子、蒸汽、眼泪周期，提升动画采样率，并修复彩纸边界裁切。GIF 编码合并相邻重复帧但保留时长。
-- Chromium responsive checks: 320 × 740, 390 × 844, 768 × 1024, 1024 × 768, 1440 × 1000. Every viewport: 12 cards, all preview images decoded, 24 download links, no horizontal overflow, no JavaScript errors. Pause/play and reduced-motion preference passed.
+- Chromium responsive checks: 320 × 740, 390 × 844, 768 × 1024, 1024 × 768, 1440 × 1000. Every viewport: 12 cards, all preview images decoded, 24 download links, no horizontal overflow, no JavaScript errors. Pause/play and reduced-motion preference passed. All 24 resource URLs returned HTTP 200 locally; an actual browser download produced `clawd-wave.gif`.
 - 已通过上述手机、平板和桌面视口检查；暂停、播放及系统减少动态效果正常。
 - These are browser viewport simulations; physical iPhone/iPad and Safari were not available for testing. / 这是浏览器视口模拟，未进行实体 iPhone/iPad 或 Safari 测试。
 
