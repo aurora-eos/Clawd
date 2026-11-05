@@ -59,4 +59,11 @@ Local Chromium checks passed at 320 × 740, 390 × 844, 768 × 1024, 1024 × 768
 
 Reproduce / 重现：`python scripts/check_assets.py`
 
-Remote version 2 deployment / 新版线上部署：verification pending / 待验证。
+## Remote deployment / 线上部署
+
+- GitHub Actions run [42007928886](https://github.com/aurora-eos/Clawd/actions/runs/42007928886) succeeded for commit `d4f361c` (asset validation and Pages deployment).
+- Repository and [Pages](https://aurora-eos.github.io/Clawd/) both returned HTTP 200.
+- All 51 published files (HTML, 48 sticker assets, contact sheet and animated scene overview) returned HTTP 200. Every SHA-256 matched the corresponding local version 2 file. Requests used normal system certificate validation.
+- GitHub Actions 校验及部署成功；仓库与网站均可访问；51 个线上文件全部 HTTP 200，SHA-256 与本地新版完全一致。
+- Online Chromium navigation encountered the session proxy certificate error `ERR_CERT_AUTHORITY_INVALID`. Auto-review rejected persistently adding the proxy CA to the browser trust store, so no trust settings were changed. Browser interaction and viewport checks were performed locally; online verification used certificate-validated HTTP requests and byte-for-byte hashes instead.
+- 线上 Chromium 因环境代理证书受阻；自动审批拒绝持久修改证书信任库，未修改安全设置。本地完成浏览器视口与交互检查，线上使用正常证书校验的 HTTP 请求和文件哈希核对。
