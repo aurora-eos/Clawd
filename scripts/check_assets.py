@@ -3,27 +3,30 @@ from pathlib import Path
 from PIL import Image, ImageChops
 import json
 ROOT = Path(__file__).resolve().parents[1]
-SLUGS = 'wave yay love typing think sleep cry angry wow coffee dance hug'.split()
+import sys
+sys.path.insert(0,str(ROOT))
+from render import SETS, W, SCALE, FRAMES, MS
+SLUGS = [item[0] for item in SETS]
 rows=[]
 assert {p.stem for p in (ROOT/'gifs').glob('*.gif')} == set(SLUGS)
 assert {p.stem for p in (ROOT/'png').glob('*.png')} == set(SLUGS)
 for slug in SLUGS:
     im=Image.open(ROOT/'gifs'/f'{slug}.gif')
-    assert im.size==(96,96) and im.info['loop']==0
+    assert im.size==(W,W) and im.info['loop']==0
     frames=[]; duration=0
     for k in range(im.n_frames):
         im.seek(k)
-        assert im.info['duration']%60==0
+        assert im.info['duration']%MS==0
         duration+=im.info['duration']
         f=im.convert('RGBA');alpha=f.getchannel('A')
         assert alpha.getextrema()==(0,255)
         box=alpha.getbbox()
-        assert box and box[0]>0 and box[1]>0 and box[2]<96 and box[3]<96
+        assert box and box[0]>0 and box[1]>0 and box[2]<W and box[3]<W
         frames.append(f.copy())
-    assert duration==1920
+    assert duration==FRAMES*MS
     assert any(ImageChops.difference(frames[0],f).convert('RGB').getbbox() for f in frames[1:])
     png=Image.open(ROOT/'png'/f'{slug}.png')
-    assert png.size==(384,384) and png.mode=='RGBA'
+    assert png.size==(W*SCALE,W*SCALE) and png.mode=='RGBA'
     assert png.getchannel('A').getextrema()==(0,255)
     def delta(a,b):
         return sum(x!=y for x,y in zip(a.getdata(),b.getdata()))

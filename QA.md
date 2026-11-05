@@ -1,32 +1,62 @@
-# Quality checks / 质量检查
+# Version 2 quality checks / 新版检查记录
 
-Checked locally on 2026-11-05 / 本地检查日期：2026-11-05。
+Date / 日期：2026-11-05
 
-- All 12 GIFs decoded frame by frame: transparent backgrounds, infinite loop, 1,920 ms duration, nonempty animation and no artwork touching canvas boundaries. All 12 PNGs are 384 × 384 RGBA with transparent backgrounds.
-- 已逐帧解码全部 12 个 GIF；透明、无限循环、时长一致、无边界裁切。12 张 PNG 均为 384 × 384 透明图。
-- Reviewed the contact sheet and decoded frame strips for all expressions: one shared silhouette, palette and pixel grid. Replaced mismatched particle/steam/tear periods with periodic motion; increased sampling from 16 × 110 ms to 32 × 60 ms. Confetti now stays inside safe canvas bounds. Identical neighboring frames are merged by GIF encoding while retaining their duration.
-- 已审阅全部表情总览和逐帧图：造型、色板和像素网格一致；修正粒子、蒸汽、眼泪周期，提升动画采样率，并修复彩纸边界裁切。GIF 编码合并相邻重复帧但保留时长。
-- Chromium responsive checks: 320 × 740, 390 × 844, 768 × 1024, 1024 × 768, 1440 × 1000. Every viewport: 12 cards, all preview images decoded, 24 download links, no horizontal overflow, no JavaScript errors. Pause/play and reduced-motion preference passed. All 24 resource URLs returned HTTP 200 locally; an actual browser download produced `clawd-wave.gif`.
-- 已通过上述手机、平板和桌面视口检查；暂停、播放及系统减少动态效果正常。
-- These are browser viewport simulations; physical iPhone/iPad and Safari were not available for testing. / 这是浏览器视口模拟，未进行实体 iPhone/iPad 或 Safari 测试。
+## Art direction / 造型
 
-Reproduce asset checks / 重现素材检查：`python scripts/check_assets.py`.
+Redrawn in response to the supplied reference: a flat muted-orange rectangular body, four thin feet, minimal eyes, no shell outline or glossy shading. All 24 expressions share the same character rig. Expanded to 15 everyday scenes and 9 moods. The supplied chat screenshot is a visual reference and is not redistributed in the repository.
 
-| Sticker | Encoded frames | Duration (ms) | Seam changed pixels | Largest frame step |
-|---|---:|---:|---:|---:|
-| wave | 26 | 1920 | 2 | 580 |
-| yay | 32 | 1920 | 148 | 792 |
-| love | 32 | 1920 | 119 | 630 |
-| typing | 32 | 1920 | 6 | 789 |
-| think | 24 | 1920 | 2 | 525 |
-| sleep | 28 | 1920 | 2 | 584 |
-| cry | 30 | 1920 | 369 | 838 |
-| angry | 31 | 1920 | 343 | 836 |
-| wow | 26 | 1920 | 2 | 524 |
-| coffee | 31 | 1920 | 18 | 601 |
-| dance | 31 | 1920 | 42 | 875 |
-| hug | 28 | 1920 | 2 | 544 |
+根据用户提供的参考图重绘：扁平橘色方块、四只细短脚、简洁眼睛，移除厚描边及外壳高光。24 款共用角色造型，包含 15 个生活场景和 9 个情绪动作。用户聊天截图仅作为视觉参考，不打包发布。
 
-Seam metrics compare the last decoded frame with the first. They support the visual review; they do not measure subjective smoothness. / 接缝像素指标用于辅助视觉检查，不能量化主观流畅度。
+## Assets / 素材
 
-Remote repository and Pages verification: pending GitHub CLI authorization. / 远端仓库及 Pages 验证：等待 GitHub CLI 授权。
+- All 24 GIFs decode successfully, with transparent backgrounds and infinite loops. 128 × 128 native pixels, 48 timeline samples at 80 ms each, 3,840 ms total. Identical neighboring frames may merge during GIF encoding; held poses are intentional.
+- All 24 PNGs are 512 × 512 RGBA, with both transparent and opaque pixels.
+- Every decoded GIF frame has nonempty artwork entirely inside the canvas boundary.
+- Inspected the full contact sheet for consistent shape, unclipped props and scene readability. Exported a four-scene animated overview in `preview/scene-loops.gif`.
+- 24 个 GIF 全部逐帧解码通过，透明、无限循环、时长一致，无边界裁切；24 张 PNG 全部透明。已检查全套总览及场景构图，并导出四场景动态预览。
+
+## Browser / 浏览器
+
+Local Chromium checks passed at 320 × 740, 390 × 844, 768 × 1024, 1024 × 768 and 1440 × 1000:
+
+- 24 cards and 48 download links; every preview decoded after scrolling into view.
+- No horizontal overflow or JavaScript errors.
+- Scene filter shows 15 cards; mood filter shows 9; reset shows all 24.
+- Pause/play switches PNG/GIF; transparency checker toggle works; reduced-motion starts paused.
+- All 48 resource URLs returned HTTP 200; actual browser download succeeded as `clawd-typing.gif`.
+
+手机、平板及桌面 5 种视口通过；筛选、暂停播放、透明棋盘、减少动态效果及实际下载通过。测试使用 Chromium 视口模拟，未进行实体 iPhone/iPad 或 Safari 测试。
+
+## Per-file decoding / 逐文件解码
+
+| Sticker | Encoded frames | Duration ms | GIF bytes |
+|---|---:|---:|---:|
+| wave | 13 | 3840 | 13679 |
+| yay | 41 | 3840 | 45010 |
+| love | 25 | 3840 | 27358 |
+| typing | 47 | 3840 | 67005 |
+| think | 7 | 3840 | 8011 |
+| sleep | 25 | 3840 | 32054 |
+| cry | 19 | 3840 | 21294 |
+| angry | 25 | 3840 | 27413 |
+| wow | 14 | 3840 | 15209 |
+| coffee | 7 | 3840 | 8765 |
+| dance | 33 | 3840 | 39235 |
+| hug | 13 | 3840 | 13840 |
+| bubbles | 48 | 3840 | 58834 |
+| rain | 48 | 3840 | 61692 |
+| gift | 13 | 3840 | 15404 |
+| garden | 19 | 3840 | 24918 |
+| noodles | 13 | 3840 | 16553 |
+| kite | 17 | 3840 | 22327 |
+| read | 22 | 3840 | 29895 |
+| toast | 12 | 3840 | 15647 |
+| camp | 15 | 3840 | 23121 |
+| paint | 13 | 3840 | 17762 |
+| scooter | 22 | 3840 | 25844 |
+| bath | 46 | 3840 | 59845 |
+
+Reproduce / 重现：`python scripts/check_assets.py`
+
+Remote version 2 deployment / 新版线上部署：verification pending / 待验证。

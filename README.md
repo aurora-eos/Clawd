@@ -1,84 +1,92 @@
 <div align="center">
 
-# 🦀 Clawd Sticker Studio
+# Clawd Sticker Studio
 
-**12 handcrafted animated pixel stickers • 12 款像素动态表情**
+**小小 Clawd，日常有戏。 / Little Clawd. Little everyday stories.**
 
-*Tiny orange crab. Big feelings.*
+24 款透明像素 GIF + 24 张 PNG · 24 transparent animated pixel stickers
 
-![Sticker gallery](preview/contact-sheet.png)
+[在线预览与下载 / Live gallery](https://aurora-eos.github.io/Clawd/) · [检查记录 / QA](QA.md)
 
-[**🌈 Live Gallery / 在线展示**](https://aurora-eos.github.io/Clawd/) · [**GIFs**](gifs/) · [**PNGs**](png/) · [**Source**](render.py)
+![All 24 stickers](preview/contact-sheet.png)
 
 </div>
 
----
+![Scene animations: bubbles, rain, gardening and bath](preview/scene-loops.gif)
 
-### ✦ The collection / 表情包合集
+## 项目介绍 / About
 
-| Sticker | Mood | 中文 | Sticker | Mood | 中文 |
-|:--:|---|---|:--:|---|---|
-| ![](gifs/wave.gif) | `wave` | 挥手 | ![](gifs/yay.gif) | `yay` | 庆祝 |
-| ![](gifs/love.gif) | `love` | 爱心 | ![](gifs/typing.gif) | `typing` | 敲代码 |
-| ![](gifs/think.gif) | `think` | 思考 | ![](gifs/sleep.gif) | `sleep` | 睡觉 |
-| ![](gifs/cry.gif) | `cry` | 哭哭 | ![](gifs/angry.gif) | `angry` | 生气 |
-| ![](gifs/wow.gif) | `wow` | 震惊 | ![](gifs/coffee.gif) | `coffee` | 咖啡 |
-| ![](gifs/dance.gif) | `dance` | 跳舞 | ![](gifs/hug.gif) | `hug` | 抱抱 |
+受 Clawd 简洁造型启发的非官方像素表情项目：扁平橘色方块身体、四只细短脚、小眼睛，用生活道具和动作讲一个小故事。新版重新绘制全部角色，并扩展到 24 款，包含 15 个生活场景和 9 个情绪动作。
 
-> The GIFs above are 96 × 96 pixels internally, drawn on a fixed pixel grid, then displayed with crisp nearest-neighbor scaling. The transparent background works in sticker-capable apps.
+An unofficial fan-made collection built around a flat orange silhouette, four tiny feet and simple expressive eyes. Version 2 redraws the full character and expands the collection to 15 everyday scenes and 9 moods. Each scene is independently drawn in code, with transparent space around the artwork.
 
-### ✦ What's inside / 内容
+## 动态预览 / Animated collection
 
-- `gifs/` — 12 **transparent, infinitely looping GIFs**, 32 sampled frames per cycle (identical adjacent frames may be merged during encoding) / 12 个透明循环动图，每个采样帧 60ms（编码时会合并相邻重复帧），约 16.7fps，1.92 秒循环。
-- `png/` — 12 transparent **384 × 384 PNG** still stickers / 12 张高清静态版。
-- `preview/contact-sheet.png` — overview / 总览图。
-- `index.html` — self-contained, responsive sticker gallery with direct download links / 在线预览与下载页。
-- `render.py` — reproducible Pillow-based animation source / 可重复生成动画的源代码。
-- `requirements.txt` — Python dependency / Python 依赖。
+| 表情 / Scene | GIF 动态预览 | 下载 / Download |
+|---|:---:|---|
+| 深夜赶工 / Deadline | <img src="gifs/typing.gif" width="128" height="128" alt="深夜赶工 / Deadline"> | [GIF](gifs/typing.gif) · [PNG](png/typing.png) |
+| 裹被睡觉 / Good night | <img src="gifs/sleep.gif" width="128" height="128" alt="裹被睡觉 / Good night"> | [GIF](gifs/sleep.gif) · [PNG](png/sleep.png) |
+| 咖啡续命 / Coffee | <img src="gifs/coffee.gif" width="128" height="128" alt="咖啡续命 / Coffee"> | [GIF](gifs/coffee.gif) · [PNG](png/coffee.png) |
+| 午后吹泡泡 / Bubbles | <img src="gifs/bubbles.gif" width="128" height="128" alt="午后吹泡泡 / Bubbles"> | [GIF](gifs/bubbles.gif) · [PNG](png/bubbles.png) |
+| 雨天等你 / Rainy day | <img src="gifs/rain.gif" width="128" height="128" alt="雨天等你 / Rainy day"> | [GIF](gifs/rain.gif) · [PNG](png/rain.png) |
+| 礼物送给你 / For you | <img src="gifs/gift.gif" width="128" height="128" alt="礼物送给你 / For you"> | [GIF](gifs/gift.gif) · [PNG](png/gift.png) |
+| 浇花小能手 / Gardening | <img src="gifs/garden.gif" width="128" height="128" alt="浇花小能手 / Gardening"> | [GIF](gifs/garden.gif) · [PNG](png/garden.png) |
+| 嗦面暂停中 / Noodle break | <img src="gifs/noodles.gif" width="128" height="128" alt="嗦面暂停中 / Noodle break"> | [GIF](gifs/noodles.gif) · [PNG](png/noodles.png) |
+| 去放风筝 / Windy day | <img src="gifs/kite.gif" width="128" height="128" alt="去放风筝 / Windy day"> | [GIF](gifs/kite.gif) · [PNG](png/kite.png) |
+| 窝着看书 / Reading | <img src="gifs/read.gif" width="128" height="128" alt="窝着看书 / Reading"> | [GIF](gifs/read.gif) · [PNG](png/read.png) |
+| 早餐烤吐司 / Breakfast | <img src="gifs/toast.gif" width="128" height="128" alt="早餐烤吐司 / Breakfast"> | [GIF](gifs/toast.gif) · [PNG](png/toast.png) |
+| 星空小露营 / Camping | <img src="gifs/camp.gif" width="128" height="128" alt="星空小露营 / Camping"> | [GIF](gifs/camp.gif) · [PNG](png/camp.png) |
+| 画一朵小花 / Painting | <img src="gifs/paint.gif" width="128" height="128" alt="画一朵小花 / Painting"> | [GIF](gifs/paint.gif) · [PNG](png/paint.png) |
+| 滑板出发啦 / On my way | <img src="gifs/scooter.gif" width="128" height="128" alt="滑板出发啦 / On my way"> | [GIF](gifs/scooter.gif) · [PNG](png/scooter.png) |
+| 泡个热水澡 / Bath time | <img src="gifs/bath.gif" width="128" height="128" alt="泡个热水澡 / Bath time"> | [GIF](gifs/bath.gif) · [PNG](png/bath.png) |
+| 探头打招呼 / Hello | <img src="gifs/wave.gif" width="128" height="128" alt="探头打招呼 / Hello"> | [GIF](gifs/wave.gif) · [PNG](png/wave.png) |
+| 开心蹦蹦 / Yay! | <img src="gifs/yay.gif" width="128" height="128" alt="开心蹦蹦 / Yay!"> | [GIF](gifs/yay.gif) · [PNG](png/yay.png) |
+| 偷偷比心 / Love | <img src="gifs/love.gif" width="128" height="128" alt="偷偷比心 / Love"> | [GIF](gifs/love.gif) · [PNG](png/love.png) |
+| 灵感来了 / Thinking | <img src="gifs/think.gif" width="128" height="128" alt="灵感来了 / Thinking"> | [GIF](gifs/think.gif) · [PNG](png/think.png) |
+| 哭成小水洼 / Sad | <img src="gifs/cry.gif" width="128" height="128" alt="哭成小水洼 / Sad"> | [GIF](gifs/cry.gif) · [PNG](png/cry.png) |
+| 气到冒烟 / Angry | <img src="gifs/angry.gif" width="128" height="128" alt="气到冒烟 / Angry"> | [GIF](gifs/angry.gif) · [PNG](png/angry.png) |
+| 吓到后退 / Wow | <img src="gifs/wow.gif" width="128" height="128" alt="吓到后退 / Wow"> | [GIF](gifs/wow.gif) · [PNG](png/wow.png) |
+| 耳机小舞步 / Dance | <img src="gifs/dance.gif" width="128" height="128" alt="耳机小舞步 / Dance"> | [GIF](gifs/dance.gif) · [PNG](png/dance.png) |
+| 给你抱抱 / Hug | <img src="gifs/hug.gif" width="128" height="128" alt="给你抱抱 / Hug"> | [GIF](gifs/hug.gif) · [PNG](png/hug.png) |
 
-### ✦ Use / 使用说明
+## 使用 / Use
 
-Open the [gallery](https://aurora-eos.github.io/Clawd/), choose an expression, and select **GIF** for animation or **PNG** for a still image. On iPhone/iPad, if Safari opens the file, touch and hold it or use Share → Save to Files. Animation and transparency support depend on the receiving app; sending as a file usually preserves the original.
+打开[画廊](https://aurora-eos.github.io/Clawd/)，可筛选场景或情绪、暂停播放、切换棋盘背景检查透明度，并下载原始 GIF 或 PNG。页面尊重系统“减少动态效果”设置。iPhone/iPad 若打开了图片，请长按保存或使用“分享 → 存储到文件”。聊天软件可能转换动图；以文件发送通常能保留原始格式。
 
-打开[在线画廊](https://aurora-eos.github.io/Clawd/)，选择表情并下载 GIF 动图或 PNG 静态图。iPhone/iPad 若打开了图片，请长按保存，或使用“分享 → 存储到文件”。聊天软件可能会转换图片；以文件发送通常能保留原始格式。页面支持暂停动画，并尊重系统“减少动态效果”设置。
+Open the gallery to filter scenes and moods, pause animations, inspect transparency on a checkerboard and download GIF or PNG files. Reduced-motion preferences are respected. On iPhone/iPad, touch and hold an opened image or use Share → Save to Files. Receiving apps may convert animations; sending as a file usually preserves the original.
 
-### ✦ Structure / 文件结构
+## 素材规格 / Asset specifications
+
+- GIF: 128 × 128, transparent, infinite loop, 48 samples × 80 ms = 3.84 seconds. Identical adjacent frames can merge during encoding without changing playback duration.
+- PNG: 512 × 512 RGBA, nearest-neighbor enlargement, transparent background.
+- 动图为透明背景、无限循环；静态图使用最近邻放大，保留清晰像素边缘。
+
+## 文件结构 / Files
 
 ```text
-.github/workflows/  # validation + GitHub Pages deployment / 校验与部署
-scripts/           # asset checks / 素材检查
-gifs/             # 12 transparent animated GIFs / 透明动图
-png/              # 12 transparent PNG posters / 透明静态图
-preview/           # contact sheet / 总览图
-index.html         # responsive gallery / 响应式画廊
-render.py          # shared pixel-art rig / 统一绘制源码
-QA.md              # actual checks and limitations / 实际检查记录
+gifs/                         24 transparent GIFs / 透明动图
+png/                          24 transparent PNGs / 透明静态图
+preview/contact-sheet.png     Full collection / 素材总览
+index.html                    Responsive gallery / 响应式画廊
+render.py                     Reproducible drawing rig / 绘制源码
+scripts/check_assets.py        Frame and alpha checks / 逐帧校验
+.github/workflows/pages.yml   Validation + deployment / 校验与部署
+QA.md                         Actual checks / 实际检查结果
 ```
 
-### ✦ Local preview / 本地预览
-
-```bash
-python -m http.server 8000
-# Open / 打开 http://localhost:8000
-```
-
-### ✦ Generate / 重新制作
+## 本地运行 / Local development
 
 ```bash
 python -m pip install -r requirements.txt
 python render.py
+python scripts/check_assets.py
+python -m http.server 8000
 ```
 
-No source image, font download, API keys, or remote assets are required. / 不依赖第三方图片、字体或 API。
+打开 / Open `http://localhost:8000`. No API keys or external artwork needed. / 无需 API 密钥或外部图片。
 
-### ✦ Design notes / 设计原则
+## 非官方声明 / Fan-art notice
 
-One consistent silhouette, 12 different emotions. Pixel edges are intentionally crisp; no resampling blur. Every file is real GIF/PNG with alpha transparency, not an MP4 disguised as an animation. Colors and geometry come from one reusable drawing rig, so frames do not drift.
+Independently drawn, unofficial fan art inspired by Clawd. Not affiliated with, sponsored or endorsed by Anthropic. Claude, Claude Code and Clawd identities belong to their respective owners. The MIT license covers project code; third-party mascot and trademark rights are excluded.
 
-### ✦ Fan-art notice / 非官方声明
-
-Unofficial, independently drawn fan-made sticker collection inspired by the Clawd mascot associated with Claude Code. **Not affiliated with, sponsored, or endorsed by Anthropic.** The names Claude, Claude Code and Clawd are trademarks or identifiers of their respective owners. All icon shapes, animations and code in this project were independently created for this fan project. The generator source code is available under the MIT License; the mascot identity and any third-party rights are not included in that license. Use generated images personally and respect the rights of the original mascot owner.
-
----
-
-<div align="center"><sub>Made with tiny pixels & a lot of care ✿</sub></div>
+本项目为独立绘制的非官方同人作品，与 Anthropic 无关联、赞助或背书。MIT 许可覆盖项目代码，不包含第三方角色及商标权利。
