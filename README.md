@@ -8,7 +8,7 @@
 
 ![Sticker gallery](preview/contact-sheet.png)
 
-[**🌈 Live Gallery / 在线展示**](https://aurora-eos.github.io/clawd-sticker-studio/) · [**GIFs**](gifs/) · [**PNGs**](png/) · [**Source**](render.py)
+[**🌈 Live Gallery / 在线展示**](https://aurora-eos.github.io/Clawd/) · [**GIFs**](gifs/) · [**PNGs**](png/) · [**Source**](render.py)
 
 </div>
 
@@ -38,9 +38,9 @@
 
 ### ✦ Use / 使用说明
 
-Open the [gallery](https://aurora-eos.github.io/clawd-sticker-studio/), choose an expression, and select **GIF** for animation or **PNG** for a still image. On iPhone/iPad, if Safari opens the file, touch and hold it or use Share → Save to Files. Animation and transparency support depend on the receiving app; sending as a file usually preserves the original.
+Open the [gallery](https://aurora-eos.github.io/Clawd/), choose an expression, and select **GIF** for animation or **PNG** for a still image. On iPhone/iPad, if Safari opens the file, touch and hold it or use Share → Save to Files. Animation and transparency support depend on the receiving app; sending as a file usually preserves the original.
 
-打开[在线画廊](https://aurora-eos.github.io/clawd-sticker-studio/)，选择表情并下载 GIF 动图或 PNG 静态图。iPhone/iPad 若打开了图片，请长按保存，或使用“分享 → 存储到文件”。聊天软件可能会转换图片；以文件发送通常能保留原始格式。页面支持暂停动画，并尊重系统“减少动态效果”设置。
+打开[在线画廊](https://aurora-eos.github.io/Clawd/)，选择表情并下载 GIF 动图或 PNG 静态图。iPhone/iPad 若打开了图片，请长按保存，或使用“分享 → 存储到文件”。聊天软件可能会转换图片；以文件发送通常能保留原始格式。页面支持暂停动画，并尊重系统“减少动态效果”设置。
 
 ### ✦ Structure / 文件结构
 
